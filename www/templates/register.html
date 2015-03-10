@@ -1,0 +1,44 @@
+<ion-view view-title="Login" name="login-view">
+  <ion-content class="padding">
+		<form novalidate="" ng-submit="register(form)" name="form" autocomplete="off">
+			<div class="list list-inset">
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Full Name</span>
+					<input type="text" placeholder="Full name" ng-model="data.username" name="username" required="">
+					<div ng-show="form.$submitted || form.username.$touched">
+						<span class="field-error" ng-show="form.username.$error.required">Please enter your name</span>
+					</div>
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Email</span>
+					<input type="email" placeholder="Email" ng-model="data.email" name="email" required>
+					<div ng-show="form.$submitted || form.email.$touched">
+						<span class="field-error" ng-show="form.email.$error.required">Please enter your email</span>
+						<span class="field-error" ng-show="form.email.$error.email">Please enter a valid email</span>
+					</div>
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Password</span>
+					<input type="password" placeholder="Password" ng-model="data.password" name="password" required ng-minlength="6">
+					<div ng-show="form.$submitted || form.password.$touched">
+						<span class="field-error" ng-show="form.password.$error.required">Please enter a password</span>
+						<span class="field-error" ng-show="form.password.$error.minlength">Password should be 6+ characters</span>
+					</div>
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Confirm Password</span>
+					<input type="password" placeholder="Confirm Password" ng-model="data.cpassword" name="cpassword" required equals="{{data.password}}">
+					<div ng-show="form.$submitted || form.cpassword.$touched">
+						<span class="field-error" ng-show="form.cpassword.$error.required">Please re-enter the password</span>
+						<span class="field-error" ng-show="form.cpassword.$error.equals">Password and confirm password do not match</span>
+					</div>
+				</label>
+			</div>
+			<div class="row">
+				<div class="form-error">{{error.message}}</div>
+			</div>
+			<button class="button button-block button-positive" type="submit">Register</button>
+		</form>
+		<a class="button button-block button-stable" href="#/login">Login</a>
+  </ion-content>
+</ion-view>

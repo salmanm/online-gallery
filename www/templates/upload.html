@@ -1,0 +1,18 @@
+<ion-view view-title="Upload Picture">
+  <ion-content>
+		<div class="row">
+			<button class="button button-block button-stable" type="button" ng-click="getPhoto()">Take Picture</button>
+		</div>
+		<div class="row upload-image">
+			<img class="full-image" src="{{image.src}}" />
+		</div>
+		<div class="row">
+			<button class="button button-block button-positive" type="button" ng-click="uploadPhoto()">Upload</button>
+		</div>
+		<!--div class="row">
+			<form action="http://localhost:3000/gallery/" method="post" enctype="multipart/form-data" />
+			<input type="file" name="image" />
+			<input type="submit" />
+		</div-->
+  </ion-content>
+</ion-view>

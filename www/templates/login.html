@@ -1,0 +1,25 @@
+<ion-view view-title="Login" name="login-view">
+  <ion-content class="padding">
+		<form novalidate="" ng-submit="login(form)" name="form" autocomplete="off">
+			<div class="list list-inset">
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Email</span>
+					<input type="email" placeholder="Email" ng-model="data.email" name="email" required>
+					<div ng-show="form.$submitted || form.email.$touched">
+						<span class="field-error" ng-show="form.email.$error.required">Please enter your email</span>
+						<span class="field-error" ng-show="form.email.$error.email">Please enter a valid email</span>
+					</div>
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Password</span>
+					<input type="password" placeholder="Password" ng-model="data.password" name="password" required ng-minlength="6">
+					<div ng-show="form.$submitted || form.password.$touched">
+						<span class="field-error" ng-show="form.password.$error.required">Please enter a password</span>
+					</div>
+				</label>
+			</div>
+			<button class="button button-block button-positive" type="submit">Login</button>
+			<a class="button button-block button-stable" href="#/register">Create Account</a>
+		</form>
+  </ion-content>
+</ion-view>

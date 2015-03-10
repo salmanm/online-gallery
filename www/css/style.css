@@ -1,0 +1,27 @@
+/* Empty. Add your own CSS if you like */
+
+.col.center {
+	text-align: center;
+}
+
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: red;
+}
+
+.item-floating-label .field-error {
+	color: red;
+	position: absolute;
+	font-size: 70%;
+	line-height: 30px;
+	right: 10px;
+	top: 10px;
+}
+
+.upload-image .full-image {
+	height: 200px;
+}
+
+.center-align {
+	text-align: center;
+}

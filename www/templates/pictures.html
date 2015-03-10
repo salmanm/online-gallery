@@ -1,0 +1,17 @@
+<ion-view view-title="Gallery">
+  <ion-content>
+		<div class="list">
+			<a class="item item-thumbnail-left" ng-repeat="pic in pictures" href="javascript: void(0);" ng-click="openModal(pic)">
+				<img src="{{pic.path}}">
+				<h2>{{pic.picture_name}}</h2>
+				<p>{{pic.upload_date | date:'M/d/yy h:mm a'}}</p>
+				<p>{{pic.size | bytesToSize}}</p>
+			</a>
+		</div>
+		<div ng-if="pictures.length == 0" class="row">
+			<div class="col center-align">
+				No pictures found in gallery. Click here to <a href="#/app/upload">Upload</a>
+			</div>
+		</div>
+  </ion-content>
+</ion-view>
